@@ -2,6 +2,7 @@
 dist
 /node_modules
 .env
+.DS_Store
 
 forkify-flowchart-part-1.png
 forkify-flowchart-part-2.png
