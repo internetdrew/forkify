@@ -17,7 +17,7 @@ class RecipeView {
     }
   }
 
-  renderSpinner = function () {
+  renderSpinner() {
     const markup = `
         <div class="spinner">
           <svg>
@@ -27,7 +27,22 @@ class RecipeView {
   `;
     this.#clearEl();
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
-  };
+  }
+
+  renderError(message) {
+    const markup = `
+          <div class="error">
+            <div>
+              <svg>
+                <use href="src/img/icons.svg#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>
+    `;
+    this.#clearEl();
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
 
   addRenderHandler(handler) {
     ['hashchange', 'load'].forEach(e => window.addEventListener(e, handler));
